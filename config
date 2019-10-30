@@ -3,7 +3,7 @@
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Iosevka 11
+font pango:Iosevka 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -224,9 +224,16 @@ bindsym $mod+Control+e mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        status_command i3blocks
         position top
         tray_output primary
+        position top
+        font pango:Iosevka 10
+        strip_workspace_numbers yes
+        separator_symbol "■"
+        bindsym button4 nop
+        bindsym button5 nop
+        tray_padding 0
 }
 
 # Restore GNOME's settings
