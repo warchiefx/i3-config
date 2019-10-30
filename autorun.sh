@@ -17,5 +17,4 @@ run solaar
 run xbindkeys
 # run compton
 run xcompmgr -c
-run nitrogen --restore
 run setxkbmap -layout us -variant altgr-intl -option ctrl:swapcaps
