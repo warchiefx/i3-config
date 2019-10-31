@@ -240,11 +240,21 @@ bar {
         position top
         tray_output primary
         font pango:Iosevka 10
-        strip_workspace_numbers yes
         separator_symbol "■"
         bindsym button4 nop
         bindsym button5 nop
         tray_padding 0
+
+        colors {
+           background #000000
+           statusline #eeeeee
+           separator #666666
+           #                  border  backgr. text
+           focused_workspace  #4c7899 #000000 #ffffff
+           active_workspace   #000000 #000000 #ffffff
+           inactive_workspace #000000 #000000 #888888
+           urgent_workspace   #900000 #000000 #ffffff
+        }
 }
 
 # Theme:
