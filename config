@@ -239,11 +239,11 @@ bar {
         status_command i3blocks -c ~/.config/i3/i3blocks/config
         position top
         tray_output primary
-        font pango:Iosevka 10
+        font pango:Iosevka 9
         separator_symbol "■"
         bindsym button4 nop
         bindsym button5 nop
-        tray_padding 0
+        tray_padding 2
 
         colors {
            background #000000
