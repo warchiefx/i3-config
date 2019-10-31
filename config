@@ -30,6 +30,7 @@ set $editor emacs
 set $email evolution
 set $chat flatpak run org.telegram.desktop
 set $slack flatpak run com.slack.Slack
+set $lock gnome-screensaver-command --lock
 
 set $runner rofi -show combi -config ~/.config/awesome/rofi.conf
 
@@ -109,8 +110,8 @@ bindsym $mod+a focus parent
 bindsym $mod+d focus child
 
 # Special Functions
-bindsym Pause exec gnome-screensaver-command --lock
-bindsym Mod1+Mod4+l exec gnome-screensaver-command --lock
+bindsym Pause exec $lock
+bindsym Mod1+Mod4+l exec $lock
 
 bindsym Print exec gnome-screenshot
 bindsym Shift+Print exec gnome-screenshot -i
