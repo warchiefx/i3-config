@@ -4,7 +4,7 @@
 # Global properties
 separator=true
 separator_block_width=15
-markup=none
+command=~/.config/i3/i3blocks/scripts/$BLOCK_NAME/$BLOCK_NAME
 
 # CPU usage
 #
@@ -15,7 +15,6 @@ label=CPU
 interval=10
 min_width=CPU 100.00%
 
-#separator=false
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
@@ -24,30 +23,30 @@ label=MEM
 separator=false
 interval=30
 
-[memory]
-label=SWAP
-instance=swap
-separator=false
-interval=30
+# [memory]
+# label=SWAP
+# instance=swap
+# separator=false
+# interval=30
 
 # Temperature
 #
 # Support multiple chips, though lm-sensors.
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-[temperature]
-label=TEMP
-interval=10
+# [temperature]
+# label=TEMP
+# interval=10
 
 # Network interface monitoring
 #
 # If the instance is not specified, use the interface used for default route.
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
-[iface]
-#IFACE=wlan0
-color=#00FF00
-interval=10
-separator=false
+# [iface]
+# #IFACE=wlan0
+# color=#00FF00
+# interval=10
+# separator=false
 
 [wifi]
 #INTERFACE=wlp3s0
@@ -64,13 +63,13 @@ interval=5
 # The battery instance defaults to 0.
 [battery]
 label=BAT
-#label=⚡
+label=⚡
 interval=30
 
 # Date Time
 #
 [time]
-command=date '+%Y-%m-%d %I:%M%P'
+command=date '+%a %d %b %I:%M%P'
 interval=15
 
 # Generic media player support

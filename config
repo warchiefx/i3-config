@@ -236,10 +236,9 @@ bindsym $mod+Control+e mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks
+        status_command i3blocks -c ~/.config/i3/i3blocks/config
         position top
         tray_output primary
-        position top
         font pango:Iosevka 10
         strip_workspace_numbers yes
         separator_symbol "■"
@@ -248,11 +247,18 @@ bar {
         tray_padding 0
 }
 
+# Theme:
+#colors:                border  backgr. text    indicator
+client.focused          #121212 #000000 #dddddd #2b2b2b #000000
+client.focused_inactive #101010 #000000 #666666 #2b2b2b #000000
+client.unfocused        #101010 #000000 #666666 #2b2b2b #000000
+client.urgent           #cd989a #cd989a #2e3436 #2b2b2b #000000
+client.background		#1d1d1d
+
 # Restore GNOME's settings
 exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
 exec nitrogen --restore
-
 
 exec ~/.config/i3/autorun.sh
