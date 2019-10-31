@@ -20,7 +20,7 @@ min_width=CPU 100.00%
 # The type defaults to "mem" if the instance is not specified.
 [memory]
 label=MEM
-separator=false
+separator=true
 interval=30
 
 # [memory]
@@ -30,13 +30,13 @@ interval=30
 # interval=30
 
 # Temperature
-#
+
 # Support multiple chips, though lm-sensors.
 # The script may be called with -w and -c switches to specify thresholds,
 # see the script for details.
-# [temperature]
-# label=TEMP
-# interval=10
+[temperature]
+label=TEMP
+interval=10
 
 # Network interface monitoring
 #
@@ -54,17 +54,25 @@ label=wifi:
 interval=10
 separator=false
 
-[bandwidth]
-#INTERFACE=eth0
-interval=5
+# [bandwidth]
+# #INTERFACE=eth0
+# min_width=IN 000K OUT 000K
+# interval=5
 
 # Battery indicator
 #
 # The battery instance defaults to 0.
+
 [battery]
 label=BAT
 label=⚡
 interval=30
+separator=false
+
+[batterybar]
+interval=5
+markup=pango
+min_width=■■■■■
 
 # Date Time
 #
