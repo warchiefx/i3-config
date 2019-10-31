@@ -42,9 +42,9 @@ workspace_auto_back_and_forth yes
 
 # Borders
 for_window [class="^.*"] border pixel 0
-for_window [window_type=floating] border pixel 1
+for_window [floating] border pixel 3
+# new_floating border pixel 1
 # default_floating_border pixel 1
-workspace_layout tabbed
 
 # Rofi
 bindsym $mod+r exec $runner
@@ -270,6 +270,7 @@ client.background		#1d1d1d
 exec --no-startup-id /usr/libexec/gnome-settings-daemon-localeexec
 # Fix a bug in gnome-settings-daemon: http://feeding.cloud.geek.nz/posts/creating-a-modern-tiling-desktop-environment-using-i3/
 exec --no-startup-id dconf write /org/gnome/settings-daemon/plugins/cursor/active false
+
 exec nitrogen --restore
 exec dunst -conf ~/.config/i3/dunstrc
 
