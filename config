@@ -101,7 +101,7 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space layout toggle tabbed splith splitv
+bindsym $mod+space layout toggle all
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -126,7 +126,6 @@ bindsym XF86AudioStop exec playerctl stop
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
-
 set $w1 "1: web"
 set $w2 "2: chat"
 set $w3 "3: mail"
@@ -139,16 +138,16 @@ set $w9 "9: opt2"
 set $w10 "10: opt3"
 
 # switch to workspace
-bindsym $mod+1 workspace number $w1
-bindsym $mod+2 workspace number $w2
-bindsym $mod+3 workspace number $w3
-bindsym $mod+4 workspace number $w4
-bindsym $mod+5 workspace number $w5
-bindsym $mod+6 workspace number $w6
-bindsym $mod+7 workspace number $w7
-bindsym $mod+8 workspace number $w8
-bindsym $mod+9 workspace number $w9
-bindsym $mod+0 workspace number $w10
+bindsym $mod+1 workspace $w1
+bindsym $mod+2 workspace $w2
+bindsym $mod+3 workspace $w3
+bindsym $mod+4 workspace $w4
+bindsym $mod+5 workspace $w5
+bindsym $mod+6 workspace $w6
+bindsym $mod+7 workspace $w7
+bindsym $mod+8 workspace $w8
+bindsym $mod+9 workspace $w9
+bindsym $mod+0 workspace $w10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $w1
