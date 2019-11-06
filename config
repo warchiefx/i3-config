@@ -101,7 +101,9 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space layout toggle all
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+Shift+y layout split
+bindsym $mod+Shift+u layout default
 
 # focus the parent container
 bindsym $mod+a focus parent
