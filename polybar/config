@@ -1,0 +1,321 @@
+[colors]
+accent = #0e9e97
+
+[bar/top]
+enable-ipc = true
+monitor = ${env:MONITOR}
+width = 100%
+height = 20
+
+background = #000000
+foreground = #eee
+
+border-bottom = 0
+border-bottom-color = #333
+
+overline-size = 0
+overline-color = ${self.background}
+underline-size = 2
+underline-color = ${self.background}
+
+padding-left = 0
+padding-right = 0
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = Iosevka-Regular:size=9;0
+font-1 = MaterialIcons:size=10;2
+font-2 = Termsynu:size=8;0
+font-3 = Siji:pixelsize=10;1
+font-4 = Lato:size=9;0
+
+modules-left = i3
+modules-center =
+modules-right = volume wireless-network wired-network battery clock
+
+wm-restack = i3
+
+tray-position = right
+
+[bar/bottom]
+monitor = ${env:MONITOR}
+bottom = true
+width = 100%
+height = 16
+
+background = #000000
+foreground = #eefafafa
+
+overline-size = 1
+overline-color = ${colors.accent}
+underline-size = 1
+underline-color = ${colors.accent}
+
+;border-color = #ff0000
+; border-top = 0
+border-top-color = #3d3d3d
+;border-bottom = 0
+;border-bottom-color = #333333
+
+spacing = 3
+;padding-right = 4
+padding-left = 2
+padding-right = 2
+module-margin-left = 0
+module-margin-right = 3
+
+font-0 = Iosevka-Regular:size=8;0
+font-1 = Unifont:size=5;0
+font-2 = FontAwesome:size=8;0
+font-3 = Iosevka-Regular:size=8;-1
+font-4 = Unifont:size=5;0
+font-5 = Termsynu:size=7;0
+
+modules-left = cpu memory
+;modules-center =
+modules-right = temperature backlight
+;modules-right = memory
+
+wm-restack = i3
+
+
+[module/fs-root]
+type = internal/fs
+mount-0 = /
+label-mounted = %{F#e60053}%percentage_used%%%{F-} used of %mountpoint%
+
+[module/fs-home]
+type = internal/fs
+mount-0 = /home
+label-mounted = %{F#e60053}%percentage_used%%%{F-} used of %mountpoint%
+
+[module/temperature]
+type = internal/temperature
+; Base temperature for where to start the ramp (in degrees celsius)
+; Default: 0
+base-temperature = 20
+
+warn-temperature = 60
+units = true
+label = %{F#0e9e97}TEMP%{F-} %temperature-c%
+label-font = 1
+label-foreground = ${colors.accent}
+
+
+label-warn = TEMP %temperature-c%
+label-warn-foreground = #f00
+
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+format = <label>
+label = %{F#0e9e97}BACKLIGHT%{F-} %percentage:3%%
+label-font = 1
+label-foreground = #99
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+ramp-foreground = #666
+interactive = true
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+pin-workspaces = true
+
+ws-icon-0 = 4: dev;
+ws-icon-1 = 1: web;
+ws-icon-2 = 6: misc;
+ws-icon-3 = 7: media;
+ws-icon-4 = 2: chat;
+ws-icon-5 = 3: mail;✉
+ws-icon-default = 
+
+label-dimmed-underline = ${root.background}
+
+label-focused = %icon% %name%
+label-focused-foreground = #f3f3f3
+label-focused-background = #3f3f3f
+label-focused-underline = ${colors.accent}
+label-focused-font = 1
+label-focused-padding = 2
+
+label-unfocused = %icon% %name%
+label-unfocused-underline = #555555
+label-unfocused-font = 1
+label-unfocused-padding = 1
+
+label-urgent = %icon% %name%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+label-urgent-font = 1
+label-urgent-padding = 1
+
+label-visible = %icon% %name%
+label-visible-foreground = #55ffffff
+label-visible-font = 1
+label-visible-padding = 1
+
+
+[module/cpu]
+type = internal/cpu
+interval = 1.5
+
+format = <label> <ramp-coreload>
+
+label = %{F#0e9e97}CPU%{F-}%percentage:4%%
+label-font = 1
+label-foreground = #ff
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/memory]
+type = internal/memory
+interval = 1
+format = <label><bar-used> 
+
+label = %{F#0e9e97}MEM%{F-}%gb_used:8%/%gb_total:8%
+label-font = 1
+label-volume-foreground = #ff
+
+bar-used-width = 20
+bar-used-gradient = true
+bar-used-foreground-0 = #449f3d
+bar-used-foreground-1 = #2f8419
+bar-used-foreground-2 = #f5a70a
+bar-used-foreground-3 = #ed5456
+bar-used-indicator = █
+bar-used-indicator-font = 5
+bar-used-indicator-foreground = #fff
+bar-used-fill = █
+bar-used-fill-font = 5
+bar-used-empty = █
+bar-used-empty-font = 5
+bar-used-empty-foreground = #44
+
+[module/wireless-network]
+type = internal/network
+interface = wlp1s0
+interval = 2.0
+ping-interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+label-disconnected =  not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-framerate = 500
+
+[module/wired-network]
+type = internal/network
+interface = enp0s31f6
+interval = 2.0
+
+label-connected =   %local_ip%
+label-disconnected = Ethernet disconnected
+label-disconnected-foreground = #66
+
+[module/clock]
+type = internal/date
+interval = 5
+format-padding = 3
+format-background = #000
+format-foreground = #fff
+label-font = 5
+
+date =   %%{F#bb}%a %d %b%%{F-}  %%{F#ee}%I:%M%%{F-}
+
+[module/volume]
+type = internal/pulseaudio
+
+format-volume = <label-volume> <ramp-volume>
+format-muted = <label-muted>
+
+label-volume = %{F#0e9e97}VOL%{F-}%percentage:3%%
+label-volume-font = 1
+label-volume-foreground = #ff
+
+label-muted = %{F#0e9e97}VOL%{F-}muted
+label-muted-font = 1
+label-muted-foreground = #99ffffff
+
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+ramp-volume-foreground = #9f78e1
+
+click-right = pavucontrol &
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ffa900
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 1
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[settings]
+screenchange-reload = true
+
+; vim:ft=dosini
