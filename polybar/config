@@ -153,8 +153,8 @@ label-unfocused-padding = 1
 
 label-urgent = %icon% %{F#454545}%index%%{F-} %name%
 label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
+; label-urgent-background = #bd2c40
+label-urgent-underline = #bd2c40
 label-urgent-font = 1
 label-urgent-padding = 1
 
