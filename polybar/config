@@ -204,7 +204,7 @@ type = internal/memory
 interval = 1
 format = <label> <bar-used>
 
-label = %{F#0e9e97}MEM%{F-}%gb_used:8%/%gb_total:8%
+label = %{F#0e9e97}MEM%{F-} %gb_used:8%/%gb_total:8%
 label-font = 1
 label-volume-foreground = #ff
 
