@@ -103,7 +103,7 @@ label-foreground = ${colors.accent}
 
 
 label-warn = TEMP %temperature-c%
-label-warn-foreground = #f00
+label-warn-foreground = #ed5456
 
 [module/backlight]
 type = internal/backlight
@@ -194,10 +194,10 @@ ramp-coreload-5-font = 2
 ramp-coreload-5-foreground = #d0a507
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = #ff5555
+ramp-coreload-6-foreground = #ed5456
 ramp-coreload-7 = █
 ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = #ff5555
+ramp-coreload-7-foreground = #ed5456
 
 [module/memory]
 type = internal/memory
