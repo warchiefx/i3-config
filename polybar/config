@@ -248,7 +248,7 @@ animation-packetloss-framerate = 500
 
 [module/wired-network]
 type = internal/network
-interface = enp0s31f6
+interface = enp0s25
 interval = 2.0
 
 label-connected =   %local_ip%
@@ -271,11 +271,11 @@ type = internal/pulseaudio
 format-volume = <label-volume> <ramp-volume>
 format-muted = <label-muted>
 
-label-volume = %{F#0e9e97}VOL%{F-}%percentage:3%%
+label-volume = %{F#0e9e97}VOL%{F-} %percentage:3%%
 label-volume-font = 1
 label-volume-foreground = #ff
 
-label-muted = %{F#0e9e97}VOL%{F-}muted
+label-muted = %{F#0e9e97}VOL%{F-} muted
 label-muted-font = 1
 label-muted-foreground = #99ffffff
 
