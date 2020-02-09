@@ -289,11 +289,15 @@ click-right = pavucontrol &
 [module/battery]
 type = internal/battery
 full-at = 98
+poll-interval = 5
 
 format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
+label-charging = %{F#0e9e97}BAT%{F-} %percentage%% (%time:5%, %consumption:5%W)
+label-discharging = %{F#0e9e97}BAT%{F-} %percentage%% (%time:5%, %consumption:5%W)
+label-full = : %{F#0e9e97}BAT%{F-} Charged
 ramp-capacity-0 = 
 ramp-capacity-0-foreground = #f53c3c
 ramp-capacity-1 = 
