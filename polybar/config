@@ -223,9 +223,9 @@ label-volume = %{F#0e9e97}VOL%{F-} %percentage:3%%
 label-volume-font = 1
 label-volume-foreground = #ff
 
-label-muted = %{F#0e9e97}VOL%{F-} muted
+label-muted = %{F#0e9e97}VOL%{F-} %{F#66}muted%{F-}
 label-muted-font = 1
-label-muted-foreground = #99ffffff
+label-muted-foreground = #66
 
 ramp-volume-0 = 🔈
 ramp-volume-1 = 🔉
