@@ -252,13 +252,13 @@ interface = enp0s25
 interval = 2.0
 
 label-connected =   %local_ip%
-label-disconnected = Ethernet disconnected
+label-disconnected =  disconnected
 label-disconnected-foreground = #66
 
 [module/clock]
 type = internal/date
 interval = 5
-format-padding = 3
+format-padding = 1
 format-background = #000
 format-foreground = #fff
 label-font = 5
@@ -295,7 +295,7 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
-label-charging = %{F#0e9e97}BAT%{F-} %percentage%% (%time:5%, %consumption:5%W)
+label-charging = %{F#0e9e97}BAT%{F-} ⚡ %percentage%% (%time:5%, %consumption:5%W)
 label-discharging = %{F#0e9e97}BAT%{F-} %percentage%% (%time:5%, %consumption:5%W)
 label-full = : %{F#0e9e97}BAT%{F-} Charged
 ramp-capacity-0 = 
