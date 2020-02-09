@@ -27,7 +27,7 @@ font-0 = Iosevka-Regular:size=9;0
 font-1 = MaterialIcons:size=10;2
 font-2 = Termsynu:size=8;0
 font-3 = Siji:pixelsize=10;1
-font-4 = Lato:size=9;0
+font-4 = Noto:size=9;0
 
 modules-left = i3
 modules-center = cpu memory temperature
@@ -36,58 +36,6 @@ modules-right = backlight volume wireless-network wired-network battery clock
 wm-restack = i3
 
 tray-position = right
-
-[bar/bottom]
-monitor = ${env:MONITOR}
-bottom = true
-width = 100%
-height = 16
-
-background = #000000
-foreground = #eefafafa
-
-; overline-size = 1
-; overline-color = ${colors.accent}
-; underline-size = 1
-underline-color = ${colors.accent}
-
-;border-color = #ff0000
-border-top = 1
-border-top-color = #111111
-;border-bottom = 0
-;border-bottom-color = #333333
-
-spacing = 3
-;padding-right = 4
-padding-left = 2
-padding-right = 2
-module-margin-left = 0
-module-margin-right = 3
-
-font-0 = Iosevka-Regular:size=9;0
-font-1 = Unifont:size=5;0
-font-2 = FontAwesome:size=8;0
-font-3 = Iosevka-Regular:size=8;-1
-font-4 = Unifont:size=5;0
-font-5 = Termsynu:size=7;0
-
-modules-left = cpu memory
-;modules-center =
-modules-right = temperature backlight
-;modules-right = memory
-
-wm-restack = i3
-
-
-[module/fs-root]
-type = internal/fs
-mount-0 = /
-label-mounted = %{F#e60053}%percentage_used%%%{F-} used of %mountpoint%
-
-[module/fs-home]
-type = internal/fs
-mount-0 = /home
-label-mounted = %{F#e60053}%percentage_used%%%{F-} used of %mountpoint%
 
 [module/temperature]
 type = internal/temperature
@@ -208,7 +156,7 @@ label = %{F#0e9e97}MEM%{F-} %gb_used:8%/%gb_total:8%
 label-font = 1
 label-volume-foreground = #ff
 
-bar-used-width = 20
+bar-used-width = 16
 bar-used-gradient = true
 bar-used-foreground-0 = #0e9e97
 bar-used-foreground-1 = #0c7d95
@@ -216,11 +164,11 @@ bar-used-foreground-2 = #d0a507
 bar-used-foreground-3 = #ed5456
 bar-used-indicator = █
 bar-used-indicator-font = 1
-bar-used-indicator-foreground = #fff
+bar-used-indicator-foreground = #22
 bar-used-fill = █
 bar-used-fill-font = 1
 bar-used-empty = █
-bar-used-empty-font = 5
+bar-used-empty-font = 1
 bar-used-empty-foreground = #22
 
 [module/wireless-network]
