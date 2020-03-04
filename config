@@ -237,6 +237,8 @@ mode "resize" {
 
 bindsym $mod+Control+e mode "resize"
 
+bindsym --whole-window button2 floating toggle
+
 # Theme:
 #colors:                border  backgr. text    indicator
 client.focused          #121212 #000000 #dddddd #2b2b2b #000000
