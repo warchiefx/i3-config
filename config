@@ -187,6 +187,8 @@ for_window [class="Lxappearance"] floating enable
 # Move between outputs
 bindsym $mod+Control+Left move workspace to output left
 bindsym $mod+Control+Right move workspace to output right
+bindsym $mod+Control+Up move workspace to output up
+bindsym $mod+Control+Down move workspace to output down
 
 # Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -ctrl intel_backlight -inc 10
