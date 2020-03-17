@@ -16,5 +16,6 @@ run gnome-screensaver
 run solaar
 run xbindkeys
 run compton
+run touchpad-indicator
 # run xcompmgr -c
 run setxkbmap -layout us -variant altgr-intl -option ctrl:swapcaps
