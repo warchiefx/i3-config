@@ -239,7 +239,7 @@ mode "resize" {
 
 bindsym $mod+Control+e mode "resize"
 
-bindsym --whole-window button2 floating toggle
+bindsym --whole-window $mod+button2 floating toggle
 
 # Theme:
 #colors:                border  backgr. text    indicator
