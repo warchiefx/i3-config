@@ -26,7 +26,7 @@ module-margin-right = 2
 font-0 = Iosevka:size=9;0
 font-1 = MaterialIcons:size=10;2
 font-2 = Termsynu:size=8;0
-font-3 = Siji:pixelsize=10;1
+font-3 = all-the-icons:size=10
 font-4 = Noto:size=9;0
 
 modules-left = i3
@@ -43,7 +43,7 @@ type = internal/temperature
 ; Default: 0
 base-temperature = 20
 
-warn-temperature = 60
+warn-temperature = 70
 units = true
 label = %{F#0e9e97}TEMP%{F-} %temperature-c%
 label-font = 1
@@ -86,27 +86,27 @@ ws-icon-default = 
 
 label-dimmed-underline = #555555
 
-label-focused = %icon% %{F#0e9e97}%index%%{F-} %name%
+label-focused = %{T4}%icon%%{T-} %{F#0e9e97}%index%%{F-} %name%
 label-focused-foreground = #f3f3f3
 ; label-focused-background = #3f3f3f
 label-focused-underline = ${colors.accent}
 label-focused-font = 1
 label-focused-padding = 1
 
-label-unfocused = %icon% %{F#454545}%index%%{F-} %name%
+label-unfocused = %{T4}%icon%%{T-} %{F#454545}%index%%{F-} %name%
 label-unfocused-underline = #555555
 label-unfocused-foreground = #333333
 label-unfocused-font = 1
 label-unfocused-padding = 1
 
-label-urgent = %icon% %{F#454545}%index%%{F-} %name%
+label-urgent = %{T4}%icon%%{T-} %{F#454545}%index%%{F-} %name%
 label-urgent-foreground = #000000
 ; label-urgent-background = #bd2c40
 label-urgent-underline = #bd2c40
 label-urgent-font = 1
 label-urgent-padding = 1
 
-label-visible = %icon% %{F#454545}%index%%{F-} %name%
+label-visible = %{T4}%icon%%{T-} %{F#454545}%index%%{F-} %name%
 label-visible-foreground = #55ffffff
 label-visible-font = 1
 label-visible-padding = 1
@@ -173,11 +173,11 @@ bar-used-empty-foreground = #22
 
 [module/wireless-network]
 type = internal/network
-interface = wlp1s0
+interface = wlan0
 interval = 2.0
 ping-interval = 10
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = %{T4}<ramp-signal>%{T-} <label-connected>
 label-connected = %essid%
 label-disconnected =  not connected
 label-disconnected-foreground = #66
